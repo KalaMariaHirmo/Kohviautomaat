@@ -17,6 +17,19 @@ namespace Kohviautomaat.Controllers
 		{
 			return View();
 		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult LisaJook([Bind(Include = "id,jooginimi,topsepakis,topsejuua")] Joogid joogid)
+		{
+			if (ModelState.IsValid)
+			{
+				db.Joogids.Add(joogid);
+				db.SaveChanges();
+				return RedirectToAction("Haldusleht");
+			}
+
+			return View(joogid);
+		}
 		public ActionResult Haldusleht()
 		{
 			return View(db.Joogids.ToList());
