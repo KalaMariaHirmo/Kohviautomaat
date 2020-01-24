@@ -1,0 +1,48 @@
+﻿@model Kohviautomaat.Models.JoogidViewModel
+
+@{
+    ViewBag.Title = "Kustuta";
+}
+
+<h2>Kustuta</h2>
+
+<h3>Kindel et soovid seda jooki kustutada?</h3>
+<div>
+    <h4>Joogid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jooginimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jooginimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.topsepakis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topsepakis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.topsejuua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topsejuua)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Tagasi", "Haldusleht")
+        </div>
+    }
+</div>

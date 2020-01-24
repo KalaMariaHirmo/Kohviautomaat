@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Kohviautomaat.Models.Joogid>
+﻿@model IEnumerable<Kohviautomaat.Models.JoogidViewModel>
+
 
 @{
     ViewBag.Title = "Haldusleht";
@@ -23,23 +24,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.jooginimi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.topsepakis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.topsejuua)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.jooginimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topsepakis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topsejuua)
+            </td>
+            <td>
+                @Html.ActionLink("Muuda", "Muuda", new { id = item.id }) |
+                @Html.ActionLink("Detailid", "Detailid", new { id = item.id }) |
+                @Html.ActionLink("Kustuta", "Kustuta", new { id = item.id })
+            </td>
+        </tr>
+    }
 
 </table>

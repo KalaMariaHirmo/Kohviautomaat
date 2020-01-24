@@ -12,6 +12,7 @@ namespace Kohviautomaat.Controllers
 {
     public class JoogidController : Controller
     {
+
         private ApplicationDbContext db = new ApplicationDbContext();
 		public ActionResult LisaJook()
 		{
@@ -32,7 +33,17 @@ namespace Kohviautomaat.Controllers
 		}
 		public ActionResult Haldusleht()
 		{
-			return View(db.Joogids.ToList());
+			var model = db.Joogids
+				.Select(u => new JoogidViewModel
+				{
+					id = u.id,
+					jooginimi = u.jooginimi,
+					topsejuua = u.topsejuua,
+					topsepakis = u.topsepakis
+				})
+				.ToList();
+				
+			return View(model);
 		}
 		// GET: Joogid
 		public ActionResult Index()

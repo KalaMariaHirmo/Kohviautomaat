@@ -1,0 +1,42 @@
+﻿@model Kohviautomaat.Models.Joogid
+
+@{
+    ViewBag.Title = "Detailid";
+}
+
+<h2>Detailid</h2>
+
+<div>
+    <h4>Joogid</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.jooginimi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.jooginimi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.topsepakis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topsepakis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.topsejuua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topsejuua)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Muuda", "Muuda", new { id = Model.id }) |
+    @Html.ActionLink("Tagasi", "Haldusleht")
+</p>

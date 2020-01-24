@@ -1,4 +1,32 @@
-﻿@{
-    ViewBag.Title = "Joogimasin";
+﻿@model IEnumerable<Kohviautomaat.Models.JoogidJoomiseksViewModel>
+@{
+    ViewBag.Title = "Kohviautomaat";
 }
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.jooginimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.topsejuua)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.jooginimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topsejuua)
+            </td>
+        </tr>
+    }
+
+</table>
