@@ -259,7 +259,6 @@
     <Content Include="Views\Joogid\Detailid.cshtml" />
     <Content Include="Views\Joogid\Muuda.cshtml" />
     <Content Include="Views\Joogid\Haldusleht.cshtml" />
-    <Content Include="Views\Home\Indeks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
