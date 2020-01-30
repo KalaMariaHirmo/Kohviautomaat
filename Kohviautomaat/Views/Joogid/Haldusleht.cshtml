@@ -37,9 +37,13 @@
                 @Html.DisplayFor(modelItem => item.topsejuua)
             </td>
             <td>
-                @Html.ActionLink("Muuda", "Muuda", new { id = item.id }) |
+                @if (item.topsejuua <= item.topsepakis)
+                {
+                    @Html.ActionLink("Lisa 1 Täitepakk", "Taida", new { id = item.id })
+                }
+                @*@Html.ActionLink("Muuda", "Muuda", new { id = item.id }) |
                 @Html.ActionLink("Detailid", "Detailid", new { id = item.id }) |
-                @Html.ActionLink("Kustuta", "Kustuta", new { id = item.id })
+                @Html.ActionLink("Kustuta", "Kustuta", new { id = item.id })*@
             </td>
         </tr>
     }

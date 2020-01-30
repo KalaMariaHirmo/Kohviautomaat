@@ -3,9 +3,8 @@
     ViewBag.Title = "Kohviautomaat";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Vali jook mida soovid tellida.</h2>
+
 <table class="table">
     <tr>
         <th>
@@ -19,14 +18,20 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.jooginimi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.topsejuua)
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.jooginimi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.topsejuua)
+        </td>
+        <td>
+            @if (item.topsejuua > 0) 
+            {
+                @Html.ActionLink("Telli üks tops", "tellimus", new { id = item.id })
+            }
+        </td>
+    </tr>
     }
 
 </table>

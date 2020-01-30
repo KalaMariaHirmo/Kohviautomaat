@@ -45,6 +45,53 @@ namespace Kohviautomaat.Controllers
 				
 			return View(model);
 		}
+
+		public ActionResult Taida(int id)
+		{
+			Joogid jook = db.Joogids.Find(id);
+			if (jook == null)
+			{
+				return HttpNotFound();
+			}
+			// Kas masinas on piisavalt ruumi?
+			if (jook.topsejuua <= jook.topsepakis)
+			{
+				jook.topsejuua += jook.topsepakis;
+				db.Entry(jook).State = EntityState.Modified;
+				db.SaveChanges();
+			}
+			else
+			{
+				//midagi kui masin on liiga täis
+				return Content("<script language='javascript' type='text/javascript'>alert('Täitepakk ei mahu masinasse.');</script>");
+			}
+			return RedirectToAction("Haldusleht");
+		}
+		// GET: Joogid/Kustuta/5
+		public ActionResult Kustuta(int? id)
+		{
+			if (id == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			Joogid joogid = db.Joogids.Find(id);
+			if (joogid == null)
+			{
+				return HttpNotFound();
+			}
+			return View(joogid);
+		}
+
+		// POST: Joogid/Kustuta/5
+		[HttpPost, ActionName("Kustuta")]
+		[ValidateAntiForgeryToken]
+		public ActionResult KustutaConfirmed(int id)
+		{
+			Joogid joogid = db.Joogids.Find(id);
+			db.Joogids.Remove(joogid);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 		// GET: Joogid
 		public ActionResult Index()
         {
