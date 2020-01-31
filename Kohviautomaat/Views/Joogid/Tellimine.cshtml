@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Kohviautomaat.Models.JoogidJoomiseksViewModel>
+@{
+    ViewBag.Title = "Kohviautomaat";
+}
+
+<h2>Vali jook mida soovid tellida.</h2>
+
+<img class="coffeeimg" src="~/Images/kisspng-coffee-tea-cafe-cafxe9-au-lait-coffee-logo-png-transparent-image-5a752582bdd6c4.9624432015176267547776.png" alt="Cup of coffee" />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.jooginimi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.topsejuua)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.jooginimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.topsejuua)
+            </td>
+            <td>
+                @if (item.topsejuua > 0)
+                {
+                    @Html.ActionLink("Telli üks tops", "tellimus", new { id = item.id })
+                }
+            </td>
+        </tr>
+    }
+
+</table>

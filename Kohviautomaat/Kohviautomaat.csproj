@@ -201,6 +201,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\kisspng-coffee-tea-cafe-cafxe9-au-lait-coffee-logo-png-transparent-image-5a752582bdd6c4.9624432015176267547776.png" />
     <Content Include="Images\logo.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -259,6 +260,7 @@
     <Content Include="Views\Joogid\Detailid.cshtml" />
     <Content Include="Views\Joogid\Muuda.cshtml" />
     <Content Include="Views\Joogid\Haldusleht.cshtml" />
+    <Content Include="Views\Joogid\Tellimine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

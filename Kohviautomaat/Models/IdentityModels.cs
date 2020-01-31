@@ -31,7 +31,5 @@ namespace Kohviautomaat.Models
         }
 
 		public System.Data.Entity.DbSet<Kohviautomaat.Models.Joogid> Joogids { get; set; }
-
-
 	}
 }

@@ -17,13 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink( " ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand JoogiautomaadiLogo" })
+                @Html.ActionLink( " ", "Tellimine", "Joogid", new { area = "" }, new { @class = "navbar-brand JoogiautomaadiLogo" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Telli Jook", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Telli Jook ☕", "Tellimine", "Joogid")</li>
                     <li>@Html.ActionLink("Haldusleht", "Haldusleht", "Joogid")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
                     <li><a href="https://onedrive.live.com/view.aspx?resid=246458D223B58A53!145728&ithint=file%2cxlsx&authkey=!AHMTQ8AsgjsM-ms">Ülesanne</a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
